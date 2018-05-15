@@ -11,13 +11,15 @@ public class Folder {
     private int id;
     private String title;
     private Set<File> files;
+    private Owner owner;
 
     public Folder(){
 
     }
 
-    public Folder(String title) {
+    public Folder(String title, Owner owner) {
         this.title = title;
+        this.owner = owner;
     }
 
     @Id
@@ -46,5 +48,15 @@ public class Folder {
 
     public void setFiles(Set<models.File> files) {
         this.files = files;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "owner_id", nullable = false)
+    public Owner getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Owner owner) {
+        this.owner = owner;
     }
 }
