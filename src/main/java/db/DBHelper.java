@@ -1,4 +1,4 @@
-package folder.db;
+package db;
 
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
